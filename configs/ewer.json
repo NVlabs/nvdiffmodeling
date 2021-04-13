@@ -1,0 +1,17 @@
+{
+    "base_mesh"          : "data/ewer/Ewer512.obj",
+    "ref_mesh"           : "data/ewer/ewer.obj",
+    "camera_eye"         : [0.5, 0.0, 3.0],
+    "camera_up"          : [0.0, 1.0, 0.0],
+    "save_interval"      : 1000,
+    "random_textures"    : true,
+    "texture_res"        : [2048, 4096],
+    "train_res"          : 512,
+    "batch"              : 8,
+    "learning_rate"      : 0.003,
+    "iter"               : 5000,
+    "light_power"        : 20.0,
+    "relative_laplacian" : true,
+    "laplacian_factor"   : 10000.0,
+    "out_dir"            : "ewer"
+}

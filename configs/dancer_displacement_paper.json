@@ -1,0 +1,16 @@
+{
+    "base_mesh": "data/dancer/dancer_1k.obj",
+    "ref_mesh": "data/dancer/dancer.obj",
+    "mtl_override": "data/dancer/dancer_diffuse.mtl",
+    "out_dir": "dancer_displacement_paper",
+    "camera_eye": [ 0.0, 0.0, 3.0 ],
+    "camera_up": [ 0.0, 1.0, 0.0 ],
+    "random_textures": false,
+    "train_res": 2048,
+    "texture_res": [ 2048, 2048 ],
+    "subdivision": 3,
+    "batch": 8,
+    "displacement": 0.20,
+    "laplacian_factor": 1000,
+    "learning_rate": 0.003
+}

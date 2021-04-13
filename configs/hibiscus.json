@@ -1,0 +1,21 @@
+{
+    "base_mesh" : "data/hibiscus/reduced/genUnique.obj",
+    "ref_mesh"  : "data/hibiscus/model.obj",
+    "camera_eye" : [0.0, 0.0, 3.5],
+    "camera_up"  : [0.0, 1.0, 0.0],
+    "save_interval" : 1000,
+    "random_textures" : true,
+    "texture_res" : [2048, 2048],
+    "animate" : false,
+    "batch" : 8,
+    "learning_rate" : 0.01,
+    "loss" : "mse",
+    "train_res" : 512,
+    "layers": 8,
+    "iter" : 5000,
+    "custom_mip": true,
+    "relative_laplacian" : true,
+    "laplacian_factor" : 100.0,
+    "min_roughness" : 0.6,
+    "out_dir" : "hibiscus"
+}

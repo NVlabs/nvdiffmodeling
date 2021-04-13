@@ -1,0 +1,16 @@
+{
+    "base_mesh": "data/dancer/dancer_8k.obj",
+    "ref_mesh": "data/dancer/dancer.obj",
+    "mtl_override": "data/dancer/dancer_brushed_gold.mtl",
+    "out_dir": "dancer_brushed_gold_64",
+    "camera_eye": [ 0.0, 0.0, 3.0 ],
+    "camera_up": [ 0.0, 1.0, 0.0 ],
+    "random_textures": false,
+    "custom_mip": true,
+    "train_res": 64,
+    "spp": 64,
+    "texture_res": [ 2048, 2048 ],
+    "learning_rate": 0.003,
+    "iter": 5000,
+    "batch": 4
+}

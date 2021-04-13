@@ -1,0 +1,15 @@
+{
+    "base_mesh"  : "data/skull/skull_p400_LOD1.obj",
+    "ref_mesh"  : "data/skull/skull_uv.obj",
+    "camera_eye" : [2.5, 0.0, 2.5],
+    "camera_up"  : [0.0, 1.0, 0.0],
+    "save_interval" : 1000,
+    "random_textures" : false,
+    "texture_res" : [2048, 2048],
+    "train_res" : 512,
+    "batch": 8,
+    "learning_rate" : 0.01,
+    "skip_train": ["kd", "ks"],
+    "iter" : 10000,
+    "out_dir" : "skull"
+}
