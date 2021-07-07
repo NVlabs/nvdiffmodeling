@@ -183,26 +183,6 @@ def random_rotation_translation(t):
     m[:3, 3] = np.random.uniform(-t, t, size=[3])
     return m
 
-def lookAt(eye, at, up):
-    a = eye - at
-    b = up
-    w = a / np.linalg.norm(a)
-    u = np.cross(b, w)
-    u = u / np.linalg.norm(u)
-    v = np.cross(w, u)
-
-    translate = np.array([[1, 0, 0, -eye[0]], 
-                          [0, 1, 0, -eye[1]], 
-                          [0, 0, 1, -eye[2]], 
-                          [0, 0, 0, 1]]).astype(np.float32)
-
-    rotate =  np.array([[u[0], u[1], u[2], 0], 
-                        [v[0], v[1], v[2], 0], 
-                        [w[0], w[1], w[2], 0], 
-                        [0, 0, 0, 1]]).astype(np.float32)
-
-    return np.matmul(rotate, translate)
-
 
 #----------------------------------------------------------------------------
 # Cosine sample around a vector N
