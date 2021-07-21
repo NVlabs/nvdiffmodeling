@@ -18,6 +18,17 @@ This work is made available under the [Nvidia Source Code License](https://githu
 For business inquiries, please contact [researchinquiries@nvidia.com](mailto:researchinquiries@nvidia.com)<br>
 For press and other inquiries, please contact Hector Marinez at [hmarinez@nvidia.com](mailto:hmarinez@nvidia.com)<br>
 
+# Citation
+
+```
+@inproceedings{Hasselgren2021,
+  title     = {Appearance-Driven Automatic 3D Model Simplification},
+  author    = {Jon Hasselgren and Jacob Munkberg and Jaakko Lehtinen and Miika Aittala and Samuli Laine},
+  booktitle = {Eurographics Symposium on Rendering},
+  year      = {2021}
+}
+```
+
 # Installation
 
 Requires VS2019+, Cuda 10.2+ and PyTorch 1.6+
