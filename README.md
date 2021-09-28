@@ -31,15 +31,18 @@ For press and other inquiries, please contact Hector Marinez at [hmarinez@nvidia
 
 # Installation
 
-Requires VS2019+, Cuda 10.2+ and PyTorch 1.6+
+Requirements:
+ - [Microsoft Visual Studio](https://visualstudio.microsoft.com/) 2019+ with Microsoft Visual C++ installed
+ - [Cuda](https://developer.nvidia.com/cuda-toolkit) 10.2+
+ - [Pytorch](https://pytorch.org/) 1.6+
 
-Tested in Anaconda3 with Python 3.6 and PyTorch 1.8
+Tested in Anaconda3 with Python 3.6 and PyTorch 1.8.
 
 ## One time setup (Windows)
 
-Install the Cuda toolkit (required to build the PyTorch extensions).
-We support Cuda 10.2 and above.
-Pick the appropriate version of PyTorch compatible with the installed Cuda toolkit.
+1. Install [Microsoft Visual Studio](https://visualstudio.microsoft.com/) 2019+ with Microsoft Visual C++. 
+2. Install [Cuda](https://developer.nvidia.com/cuda-toolkit) 10.2 or above. **Note:** Install CUDA toolkit from https://developer.nvidia.com/cuda-toolkit (not through anaconda)
+3. Install the appropriate version of PyTorch compatible with the installed Cuda toolkit.
 Below is an example with Cuda 11.1
 
 ```
@@ -50,7 +53,7 @@ conda install imageio
 pip install PyOpenGL glfw
 ```
 
-Install nvdiffrast: https://github.com/NVlabs/nvdiffrast in the `dmodel` conda env.
+4. Install [nvdiffrast](https://github.com/NVlabs/nvdiffrast) in the `dmodel` conda env. Follow the [installation instructions](https://nvlabs.github.io/nvdiffrast/#windows).
 
 ### Every new command prompt
 `activate dmodel`
