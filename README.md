@@ -15,8 +15,7 @@ Copyright © 2021, NVIDIA Corporation. All rights reserved.
 
 This work is made available under the [Nvidia Source Code License](https://github.com/NVlabs/nvdiffmodeling/blob/main/LICENSE.txt).
 
-For business inquiries, please contact [researchinquiries@nvidia.com](mailto:researchinquiries@nvidia.com)<br>
-For press and other inquiries, please contact Hector Marinez at [hmarinez@nvidia.com](mailto:hmarinez@nvidia.com)<br>
+For business inquiries, please visit our website and submit the form: [NVIDIA Research Licensing](https://www.nvidia.com/en-us/research/inquiries/)<br>
 
 # Citation
 
