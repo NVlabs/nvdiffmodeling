@@ -77,8 +77,8 @@ Included examples
 - `ewer.json`  - Ewer model from a reduced mesh as initial guess
 - `gardenina.json` - Aggregate geometry example
 - `hibiscus.json` - Aggregate geometry example
-- `figure_brushed_gold_64.json` - LOD example, trained against a supersampled reference
-- `figure_displacement.json` - Joint shape, normal map, and displacement map example
+- `dancer_brushed_gold_64.json` - LOD example, trained against a supersampled reference
+- `dancer_displacement.json` - Joint shape, normal map, and displacement map example
 
 The json files that end in `_paper.json` are configs with the settings used
 for the results in the paper. They take longer and require a GPU with sufficient memory.
