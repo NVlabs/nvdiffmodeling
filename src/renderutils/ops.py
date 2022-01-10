@@ -358,7 +358,7 @@ def image_loss(img, target, loss='l1', tonemapper='none', use_python=False):
         out = image_loss_fn(img, target, loss, tonemapper)
     else:
         out = _image_loss_func.apply(img, target, loss, tonemapper)
-        out = torch.mean(out)
+        out = torch.sum(out) / (img.shape[0]*img.shape[1]*img.shape[2])
 
     if torch.is_anomaly_enabled():
         assert torch.all(torch.isfinite(out)), "Output of image_loss contains inf or NaN"

@@ -96,7 +96,7 @@ __global__ void imgLossFwdKernel(LossKernelParams p)
     unsigned int py = blockIdx.y * blockDim.y + threadIdx.y;
     unsigned int pz = blockIdx.z;
 
-    float floss = 0.0f, fmask = 0.0f;
+    float floss = 0.0f;
     if (px < p.gridSize.x && py < p.gridSize.y && pz < p.gridSize.z)
     {
         vec3f img = p.img.fetch3(px, py, pz);
@@ -122,10 +122,9 @@ __global__ void imgLossFwdKernel(LossKernelParams p)
             vloss = vec3f(abs(img.x - target.x), abs(img.y - target.y), abs(img.z - target.z));
         
         floss = sum(vloss) / 3.0f;
-        fmask = 1.0f;
     }
 
-    floss = warpSum(floss) / warpSum(fmask);
+    floss = warpSum(floss);
 
     dim3 warpSize = getWarpSize(blockDim);
     if (px < p.gridSize.x && py < p.gridSize.y && pz < p.gridSize.z && threadIdx.x % warpSize.x == 0 && threadIdx.y % warpSize.y == 0 && threadIdx.z % warpSize.z == 0)
@@ -138,8 +137,6 @@ __global__ void imgLossBwdKernel(LossKernelParams p)
     unsigned int px = blockIdx.x * blockDim.x + threadIdx.x;
     unsigned int py = blockIdx.y * blockDim.y + threadIdx.y;
     unsigned int pz = blockIdx.z;
-
-    float warp_elements = warpSum((px < p.gridSize.x&& py < p.gridSize.y&& pz < p.gridSize.z) ? 1.0f : 0.0f);
 
     if (px >= p.gridSize.x || py >= p.gridSize.y || pz >= p.gridSize.z)
         return;
@@ -163,7 +160,7 @@ __global__ void imgLossBwdKernel(LossKernelParams p)
     /////////////////////////////////////////////////////////////////////
     // BWD
 
-    vec3f d_vloss = vec3f(d_out, d_out, d_out) / (warp_elements * 3.0f);
+    vec3f d_vloss = vec3f(d_out, d_out, d_out) / 3.0f;
 
     vec3f d_img(0), d_target(0);
     if (p.loss == LOSS_MSE)

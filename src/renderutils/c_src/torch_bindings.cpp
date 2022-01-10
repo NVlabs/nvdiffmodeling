@@ -663,7 +663,7 @@ torch::Tensor image_loss_fwd(torch::Tensor img, torch::Tensor target, std::strin
 
     // Allocate output tensors.
     torch::TensorOptions opts = torch::TensorOptions().dtype(p.out.fp16 ? torch::kBFloat16 : torch::kFloat32).device(torch::kCUDA);
-    torch::Tensor out = torch::empty({ p.gridSize.z / warpSize.z, p.gridSize.y / warpSize.y, p.gridSize.x / warpSize.x, 1 }, opts);
+    torch::Tensor out = torch::empty({ (p.gridSize.z - 1) / warpSize.z + 1, (p.gridSize.y - 1) / warpSize.y + 1, (p.gridSize.x - 1) / warpSize.x + 1, 1 }, opts);
 
     p.img = make_cuda_tensor(img, p.gridSize);
     p.target = make_cuda_tensor(target, p.gridSize);
