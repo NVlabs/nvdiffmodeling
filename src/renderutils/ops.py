@@ -381,7 +381,10 @@ class _xfm_func(torch.autograd.Function):
         return (_plugin.xfm_bwd(points, matrix, dout, ctx.isPoints),) + (None, None, None)
 
 def xfm_points(points, matrix, use_python=False):
-    '''Transform points.
+    '''Transform points. 
+    Note: this method does not back-propagate matrix gradients by default for performance reasons. For matrix gradients, 
+    enable use_python=True or use torch.matmul instead.
+
     Args:
         points: Tensor containing 3D points with shape [minibatch_size, num_vertices, 3] or [1, num_vertices, 3]
         matrix: A 4x4 transform matrix with shape [minibatch_size, 4, 4]
@@ -399,7 +402,10 @@ def xfm_points(points, matrix, use_python=False):
     return out
 
 def xfm_vectors(vectors, matrix, use_python=False):
-    '''Transform vectors.
+    '''Transform vectors. 
+    Note: this method does not back-propagate matrix gradients by default for performance reasons. For matrix gradients, 
+    enable use_python=True or use torch.matmul instead.
+
     Args:
         vectors: Tensor containing 3D vectors with shape [minibatch_size, num_vertices, 3] or [1, num_vertices, 3]
         matrix: A 4x4 transform matrix with shape [minibatch_size, 4, 4]
